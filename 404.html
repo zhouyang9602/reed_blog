@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>页面走丢了 · Reed</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .static-404 {
+      width: min(100% - 36px, 760px);
+      min-height: 100vh;
+      margin: 0 auto;
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+
+    .static-404-code {
+      margin: 0;
+      color: var(--blue);
+      font-family: var(--font-mono);
+      font-size: clamp(92px, 24vw, 190px);
+      font-weight: 800;
+      letter-spacing: -0.1em;
+      line-height: 0.9;
+      opacity: 0.18;
+    }
+
+    .static-404 h1 {
+      margin: 0 0 10px;
+      font-family: var(--font-serif);
+      font-size: clamp(26px, 5vw, 40px);
+    }
+
+    .static-404 p {
+      margin: 0 auto 24px;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    .static-404 a {
+      min-height: 44px;
+      padding: 0 19px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 10px;
+      color: #fff;
+      background: var(--blue);
+      font-size: 13px;
+      font-weight: 650;
+    }
+  </style>
+</head>
+<body>
+  <main class="static-404">
+    <div>
+      <p class="static-404-code">404</p>
+      <h1>这一页走丢了</h1>
+      <p>你访问的地址不存在，或者页面已经被移动。</p>
+      <a href="./">回到博客首页</a>
+    </div>
+  </main>
+</body>
+</html>

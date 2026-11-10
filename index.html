@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reed 的个人博客，记录产品、代码、阅读与生活。">
+  <meta name="theme-color" content="#081c34">
+  <title>Reed · 个人博客</title>
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("linan-blog-theme");
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = savedTheme || systemTheme;
+    } catch (error) {
+      document.documentElement.dataset.theme = "light";
+    }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="nav-shell">
+      <a class="brand" href="#/" aria-label="返回首页">
+        <span class="brand-mark" aria-hidden="true">
+          <span></span>
+        </span>
+        <span class="brand-copy">
+          <strong id="brandName">Reed</strong>
+          <small id="brandTagline">PRODUCT · CODE · LIFE</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="主导航">
+        <a href="#/" data-nav="home">首页</a>
+        <a href="#/articles" data-nav="articles">文章</a>
+        <a href="#/about" data-nav="about">关于</a>
+      </nav>
+
+      <div class="nav-tools">
+        <form class="nav-search" id="navSearchForm" role="search">
+          <label class="sr-only" for="navSearchInput">搜索文章</label>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-4-4"></path>
+          </svg>
+          <input id="navSearchInput" type="search" placeholder="搜索文章..." autocomplete="off">
+          <span class="search-key">/</span>
+        </form>
+
+        <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="切换深浅色主题">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 14.4A8.5 8.5 0 0 1 9.6 3.5 8.5 8.5 0 1 0 20.5 14.4Z"></path>
+          </svg>
+        </button>
+
+        <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-label="打开菜单" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-panel" id="mobilePanel">
+      <nav aria-label="移动端导航">
+        <a href="#/" data-nav="home">首页</a>
+        <a href="#/articles" data-nav="articles">文章</a>
+        <a href="#/about" data-nav="about">关于</a>
+      </nav>
+      <form class="mobile-search" id="mobileSearchForm" role="search">
+        <label class="sr-only" for="mobileSearchInput">搜索文章</label>
+        <input id="mobileSearchInput" type="search" placeholder="输入关键词，按回车搜索" autocomplete="off">
+        <button type="submit">搜索</button>
+      </form>
+    </div>
+  </header>
+
+  <main id="app">
+    <div class="page-loading" aria-label="正在加载">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <div class="footer-profile">
+        <span class="footer-monogram" id="footerMonogram">RE</span>
+        <div>
+          <strong id="footerName">Reed</strong>
+          <p id="footerDescription">写代码，也写那些值得被记住的小事。</p>
+        </div>
+      </div>
+      <div class="footer-links" id="footerLinks"></div>
+      <p class="footer-copy">
+        <span id="footerCopyright">© 2026 Reed</span>
+        <span>以 Markdown 写作，用好奇心更新。</span>
+      </p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="回到顶部">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="m18 15-6-6-6 6"></path>
+    </svg>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">这个博客需要启用 JavaScript 才能阅读 Markdown 文章。</div>
+  </noscript>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
